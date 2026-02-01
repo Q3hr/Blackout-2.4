@@ -101,9 +101,18 @@ Exploits BLE advertising mechanisms to overwhelm nearby devices:
 | **Header Pins** | 2.54mm pitch<br/>Male-to-female | Provides modular connections between ESP32 GPIO pins and peripheral devices |
 | **Jumper Wires** | 20cm, male-to-male<br/>Various colors | Creates signal pathways for SPI, power, and control lines between components |
 
-### Circuit Connections
+### 🔌 Circuit Connections
 
+All hardware wiring and pin mapping details are provided in the following document:
 
+📊 **Connection Excel File:**  
+👉 https://github.com/Q3hr/Blackout-2.4/tree/main/Pre-Compiled%20Binaries/Connection%20Excel%20File
+
+This file contains:
+- ESP32 ↔ TFT display pin connections  
+- Power and ground mappings  
+- SPI signal wiring (MOSI, MISO, SCK, CS, DC, RST)  
+- Touch interface connections
 
 ### Power Requirements
 - **Operating Voltage**: 3.3V (regulated on-board)
@@ -126,12 +135,18 @@ Blackout 2.4 uses a simplified firmware flashing approach that requires no sourc
 
 ### Step-by-Step Installation
 
-#### 1️⃣ Download Firmware
+### 🔽 Firmware Download
 
-Navigate to the [Releases](../../releases) section of this repository and download the latest firmware package containing:
+All pre-compiled firmware binaries are available here:
+
+📁 **Firmware Files Directory:**  
+👉 https://github.com/Q3hr/Blackout-2.4/tree/main/Pre-Compiled%20Binaries/Firmware%20Files
+
+Navigate to the **Firmware Files** directory and download the latest firmware package containing:
+- `boot_app0.bin`
 - `bootloader.bin`
 - `partitions.bin`
-- `blackout24.bin`
+- `firmware.bin`
 
 #### 2️⃣ Connect ESP32
 
@@ -156,7 +171,8 @@ This web-based ESP flasher tool uses WebSerial API for direct serial communicati
 |------|--------|-------------|
 | `bootloader.bin` | `0x1000` | ESP32 bootloader |
 | `partitions.bin` | `0x8000` | Partition table |
-| `blackout24.bin` | `0x10000` | Main application |
+| `boot_app0.bin` | `0xE000` | ESP32 bootapp |
+| `firmware.bin` | `0x10000` | Main application |
 
 3. Click **"Program"** to begin the flashing process
 4. Wait for the "Programming successful" message
