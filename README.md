@@ -39,11 +39,11 @@ The project focuses on Wi-Fi (IEEE 802.11) and Bluetooth Low Energy (BLE) protoc
 
 ---
 
-<div align="center">
+## 🏆 Blackout 2.4 Showcase 
+
 
 <img src="https://github.com/Q3hr/Blackout-2.4/blob/main/Hehe.jpg" alt="Blackout 2.4 Project Showcase" width="500"/>
 
-</div>
 
 ---
 
