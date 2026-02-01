@@ -211,15 +211,6 @@ This web-based ESP flasher tool uses WebSerial API for direct serial communicati
 - **Target Networks**: Isolated test APs (no production networks)
 - **Monitoring**: Wireshark packet capture for verification
 
-### Performance Metrics
-
-| Attack Type | Success Rate | Avg. Execution Time | Packets Sent/sec |
-|-------------|--------------|---------------------|------------------|
-| Deauthentication | 98% | < 3 seconds | 15 |
-| Evil Portal | 85% | 5-8 seconds | N/A |
-| AP Spam | 100% | Continuous | 50+ |
-| BLE Spam | 92% | Continuous | 30+ |
-| Rickroll Payload | 65% | 10-15 seconds | 5 |
 
 ### Observations
 
