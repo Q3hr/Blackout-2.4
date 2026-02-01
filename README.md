@@ -1,36 +1,23 @@
-# Blackout 2.4 🛡️
+# ⚡ Blackout 2.4: Advanced 2.4 GHz Wireless Security Framework
 
-<div align="center">
-
-![Project Status](https://img.shields.io/badge/status-active-success.svg)
-![License](https://img.shields.io/badge/license-Educational-blue.svg)
-![Platform](https://img.shields.io/badge/platform-ESP32-brightgreen.svg)
-![Spectrum](https://img.shields.io/badge/spectrum-2.4_GHz-orange.svg)
-![Security](https://img.shields.io/badge/domain-network_security-red.svg)
+> **Comprehensive Wi-Fi & Bluetooth Spectrum Analysis and Exploitation Platform**
 
 **A 5th Semester Network Security Project**
 
+<div align="center">
+
+[![ESP32](https://img.shields.io/badge/Hardware-ESP32-brightgreen.svg)](#)
+[![WiFi](https://img.shields.io/badge/Spectrum-2.4_GHz-orange.svg)](#)
+[![Bluetooth](https://img.shields.io/badge/Bluetooth-BLE-blueviolet.svg)](#)
+[![Network Security](https://img.shields.io/badge/Domain-Network_Security-red.svg)](#)
+[![Embedded](https://img.shields.io/badge/Platform-Embedded_Systems-lightgrey.svg)](#)
+[![Educational](https://img.shields.io/badge/Purpose-Educational-brightgreen.svg)](#)
+
+*A sophisticated embedded cybersecurity project demonstrating real-world abuse, analysis, and exploitation of the 2.4 GHz ISM spectrum using Wi-Fi and Bluetooth attacks on ESP32 hardware*
+
 *Advanced 2.4 GHz ISM Spectrum Analysis and Exploitation Framework*
 
-[Features](#-features) • [Hardware](#-hardware-components) • [Installation](#-installation--deployment) • [Architecture](#-system-architecture) • [Disclaimer](#-ethical--legal-disclaimer)
-
 </div>
-
----
-
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Hardware Components](#-hardware-components)
-- [System Architecture](#-system-architecture)
-- [Installation & Deployment](#-installation--deployment)
-- [Attack Workflows](#-attack-workflows)
-- [Testing & Results](#-testing--results)
-- [Ethical & Legal Disclaimer](#-ethical--legal-disclaimer)
-- [Limitations & Future Work](#-limitations--future-enhancements)
-- [References](#-references)
-- [Contributors](#-contributors)
 
 ---
 
@@ -81,6 +68,10 @@ Floods the wireless environment with fake access points:
 - Causes confusion and network discovery disruption
 - Tests client-side SSID handling and UI performance
 
+#### Rickroll Payload Attack
+Demonstrates the flooding of the wireless environment:
+- Displays the SSIDs of Wi-Fi with the popular prank song
+
 ### 📡 Bluetooth Low Energy Attacks
 
 #### BLE Spam Attack
@@ -89,11 +80,6 @@ Exploits BLE advertising mechanisms to overwhelm nearby devices:
 - Device pairing popup spam (iOS/Android)
 - Tests BLE stack robustness and filtering
 
-#### Rickroll Payload Attack
-Demonstrates payload delivery through BLE advertising:
-- Injects custom BLE advertisements with embedded URLs
-- Triggers automatic browser opening on vulnerable devices
-- Showcases BLE-based social engineering vectors
 
 ### 🖥️ User Interface
 - **Touchscreen Control**: Intuitive 2.8" TFT LCD interface (240x320 resolution)
@@ -117,17 +103,7 @@ Demonstrates payload delivery through BLE advertising:
 
 ### Circuit Connections
 
-```
-ESP32 → TFT Display (SPI Interface)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GPIO 23  →  MOSI (Serial Data)
-GPIO 18  →  SCK  (Clock)
-GPIO 5   →  CS   (Chip Select)
-GPIO 2   →  DC   (Data/Command)
-GPIO 4   →  RST  (Reset)
-3.3V     →  VCC
-GND      →  GND
-```
+
 
 ### Power Requirements
 - **Operating Voltage**: 3.3V (regulated on-board)
@@ -136,104 +112,6 @@ GND      →  GND
 
 ---
 
-## 🏗️ System Architecture
-
-### High-Level Architecture Diagram
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     BLACKOUT 2.4 SYSTEM                     │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │              User Interface Layer                      │  │
-│  │  ┌─────────────────────────────────────────────────┐  │  │
-│  │  │  TFT LCD Controller (ILI9341 Driver)            │  │  │
-│  │  │  • Touch Event Processing                        │  │  │
-│  │  │  • Graphics Rendering Engine                     │  │  │
-│  │  │  • Menu System & Navigation                      │  │  │
-│  │  └─────────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────┘  │
-│                            │                                 │
-│                            ▼                                 │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │         Application Logic Layer (ESP32 Core 0)        │  │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌────────────┐  │  │
-│  │  │ Attack       │  │ Configuration│  │  Data      │  │  │
-│  │  │ Orchestrator │  │ Manager      │  │  Logger    │  │  │
-│  │  └──────────────┘  └──────────────┘  └────────────┘  │  │
-│  └───────────────────────────────────────────────────────┘  │
-│                            │                                 │
-│                            ▼                                 │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │    Wireless Protocol Layer (ESP32 Core 1)            │  │
-│  │  ┌──────────────────┐      ┌──────────────────────┐  │  │
-│  │  │  Wi-Fi Engine    │      │  BLE Engine          │  │  │
-│  │  │  • 802.11 Stack  │      │  • BLE 4.2 Stack     │  │  │
-│  │  │  • Frame Inject. │      │  • Advert. Inject.   │  │  │
-│  │  │  • Promiscuous   │      │  • GATT Services     │  │  │
-│  │  └──────────────────┘      └──────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────┘  │
-│                            │                                 │
-│                            ▼                                 │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │              Hardware Abstraction Layer               │  │
-│  │  ┌──────────────────────────────────────────────────┐ │  │
-│  │  │  ESP32 Radio Frontend (2.4 GHz Transceiver)      │ │  │
-│  │  │  • RF Power Amplifier                            │ │  │
-│  │  │  • Spectrum Analyzer                             │ │  │
-│  │  │  • Channel Hopping Controller                    │ │  │
-│  │  └──────────────────────────────────────────────────┘ │  │
-│  └───────────────────────────────────────────────────────┘  │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                             ▼
-                    2.4 GHz ISM Band
-            (Wi-Fi Channels 1-13, BLE 37-39)
-```
-
-### Software Components
-
-#### Core Modules
-
-**1. UI Module (`ui_controller.cpp`)**
-- Manages touchscreen input events
-- Renders attack selection menus
-- Displays real-time attack statistics
-- Handles user configuration screens
-
-**2. Wi-Fi Attack Module (`wifi_attacks.cpp`)**
-- Implements 802.11 frame crafting
-- Manages deauthentication packet injection
-- Controls Evil Portal web server
-- Handles AP cloning and spam generation
-
-**3. BLE Attack Module (`ble_attacks.cpp`)**
-- BLE advertisement packet generation
-- Spam attack orchestration
-- Custom payload encoding and transmission
-
-**4. Spectrum Analyzer (`spectrum.cpp`)**
-- Real-time RSSI measurement
-- Channel occupancy analysis
-- Device discovery and tracking
-
-#### Data Flow
-
-```
-User Input (Touch) → UI Module → Attack Controller
-                                       ↓
-                        ┌──────────────┴──────────────┐
-                        ▼                             ▼
-                 Wi-Fi Module                    BLE Module
-                        ↓                             ↓
-                 802.11 Frames                  BLE Packets
-                        ↓                             ↓
-                    ESP32 Radio → 2.4 GHz Spectrum
-```
-
----
 
 ## 📦 Installation & Deployment
 
@@ -241,7 +119,7 @@ Blackout 2.4 uses a simplified firmware flashing approach that requires no sourc
 
 ### Prerequisites
 
-- ESP32 development board (ESP32-WROOM or ESP32-WROVER)
+- ESP32 development board (ESP32-WROOM [module] )
 - USB cable (data transfer capable)
 - Modern web browser (Chrome, Edge, or Opera recommended)
 - Internet connection for web-based flasher
@@ -308,99 +186,19 @@ This web-based ESP flasher tool uses WebSerial API for direct serial communicati
 
 **Objective**: Force disconnection of clients from targeted access points
 
-**Attack Mechanism**:
-```
-1. Scan 2.4 GHz spectrum for active access points
-2. Identify target AP and connected clients
-3. Craft spoofed deauth frames:
-   • Source MAC: Target AP's BSSID
-   • Destination MAC: Client MAC / Broadcast
-   • Reason Code: 0x07 (Class 3 frame from unassociated STA)
-4. Inject frames at 10-20 packets/second
-5. Monitor client disconnection via probe requests
-```
-
 **Use Case**: Testing wireless intrusion detection systems (WIDS) and client reconnection behavior
 
 ### 2. Evil Portal Attack
 
 **Objective**: Credential harvesting through fake captive portals
 
-**Attack Workflow**:
-```
-┌─────────────┐
-│ Start Attack│
-└──────┬──────┘
-       │
-       ▼
-┌─────────────────────────┐
-│ Clone Target AP SSID    │
-│ • Same name as target   │
-│ • Open authentication   │
-└──────┬──────────────────┘
-       │
-       ▼
-┌─────────────────────────┐
-│ Deauth Legitimate AP    │
-│ • Force client disconnect│
-└──────┬──────────────────┘
-       │
-       ▼
-┌─────────────────────────┐
-│ Client Connects to Evil │
-│ • Stronger signal       │
-│ • Auto-reconnect        │
-└──────┬──────────────────┘
-       │
-       ▼
-┌─────────────────────────┐
-│ Serve Captive Portal    │
-│ • Fake login page       │
-│ • DNS spoofing          │
-└──────┬──────────────────┘
-       │
-       ▼
-┌─────────────────────────┐
-│ Log Credentials         │
-│ • Store to SPIFFS       │
-│ • Display on screen     │
-└─────────────────────────┘
-```
-
 ### 3. AP Spam Attack
-
-**Technical Implementation**:
-- Generates 50+ fake SSIDs per second
-- Uses beacon frame injection with randomized BSSIDs
-- Cycles through all 13 channels
-- Creates network discovery confusion
 
 **Impact**: Tests client-side SSID filtering and UI performance under stress
 
 ### 4. BLE Spam Attack
 
-**Packet Structure**:
-```c
-BLE Advertisement Packet:
-┌─────────────────────────┐
-│ PDU Type: ADV_IND       │
-│ AdvA: Random MAC        │
-│ AdvData:                │
-│  • Complete Local Name  │
-│  • Manufacturer Data    │
-│  • Service UUID (Spoofed)│
-└─────────────────────────┘
-```
-
 **Targeted Devices**: iOS (AirPods/FindMy), Android (Fast Pair), Windows (Swift Pair)
-
-### 5. Rickroll Payload
-
-**Attack Vector**: BLE-based URL injection exploiting Physical Web/Eddystone protocols
-
-**Payload**: Custom Eddystone-URL beacon containing shortened URL to rickroll video
-
-**Affected Devices**: Older Android versions with Physical Web enabled, Smart TVs with BLE discovery
 
 ---
 
@@ -508,43 +306,12 @@ If vulnerabilities are discovered during authorized testing:
 **Software Limitations**:
 - No WPA3 attack support
 - Limited Evil Portal template customization
-- No packet capture storage (PCAP export)
 - Basic UI without advanced filtering options
 
 **Protocol Restrictions**:
 - 802.11w protected networks immune to deauth
 - Modern BLE stacks filter spam advertisements
 - No support for Zigbee/Thread protocol attacks
-
-### Proposed Future Enhancements
-
-#### Short-term (v2.0)
-- [ ] **SD Card Integration** - PCAP storage and credential logging
-- [ ] **Enhanced UI** - Multi-page menus with attack history
-- [ ] **Custom Evil Portal Templates** - User-uploadable HTML/CSS
-- [ ] **Bluetooth Classic Support** - Classic Bluetooth attacks (if hardware permits)
-
-#### Medium-term (v2.5)
-- [ ] **WPA3 Downgrade Attacks** - Force transition security vulnerabilities
-- [ ] **GPS Module** - Wardriving with geolocation
-- [ ] **Battery Monitor** - Display remaining power
-- [ ] **Remote Control API** - Control via Bluetooth serial for automation
-
-#### Long-term (v3.0)
-- [ ] **5 GHz Support** - Dual-band attacks (requires hardware upgrade)
-- [ ] **AI-Powered Target Selection** - ML-based optimal AP identification
-- [ ] **Mesh Network Attacks** - ESP-MESH exploitation
-- [ ] **Hardware Revision** - Custom PCB with external antenna connector
-
-### Community Contributions
-
-We welcome contributions from the security research community:
-- **Bug Reports**: Use GitHub Issues with detailed reproduction steps
-- **Feature Requests**: Propose enhancements with use case justification
-- **Code Contributions**: Submit pull requests following coding standards
-- **Documentation**: Improve README, add tutorials, or translate content
-
----
 
 ## 📚 References
 
@@ -581,58 +348,6 @@ We welcome contributions from the security research community:
 [12] Adafruit Industries, "Adafruit_ILI9341 Library," GitHub Repository, 2023. [Online]. Available: https://github.com/adafruit/Adafruit_ILI9341
 
 ---
-
-## 👥 Contributors
-
-<div align="center">
-
-**Project Team**
-
-*5th Semester Network Security Course*
-
-[Your Name] - Project Lead & Embedded Systems Developer  
-[Team Member 2] - Wi-Fi Protocol Implementation  
-[Team Member 3] - BLE Stack & UI Design  
-[Team Member 4] - Hardware Integration & Testing
-
-**Special Thanks**
-
-Dr. [Instructor Name] - Course Instructor & Advisor  
-[University Name] - Department of Computer Science
-
-</div>
-
----
-
-## 📄 License
-
-This project is released under the **Educational Use License**.
-
-```
-Copyright (c) 2026 Blackout 2.4 Project Team
-
-Permission is granted to use, modify, and distribute this software
-for educational and research purposes only, subject to the following
-conditions:
-
-1. This software shall not be used for malicious, illegal, or 
-   unauthorized activities.
-2. Users must obtain written authorization before testing on 
-   networks or devices they do not own.
-3. The copyright notice and this permission notice shall be 
-   included in all copies or substantial portions of the software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THIS
-SOFTWARE.
-```
-
----
-
-<div align="center">
 
 **Blackout 2.4** - *Illuminating Wireless Security Through Controlled Darkness*
 
