@@ -349,6 +349,8 @@ If vulnerabilities are discovered during authorized testing:
 
 ---
 
+<div>
+
 **Blackout 2.4** - *Illuminating Wireless Security Through Controlled Darkness*
 
 **🎓 Developed for Advanced Cybersecurity Education**
