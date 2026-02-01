@@ -351,11 +351,20 @@ If vulnerabilities are discovered during authorized testing:
 
 **Blackout 2.4** - *Illuminating Wireless Security Through Controlled Darkness*
 
-⭐ Star this repository if you found it useful for your security research!
+**🎓 Developed for Advanced Cybersecurity Education**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/blackout24.svg?style=social&label=Star)](../../stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/blackout24.svg?style=social&label=Fork)](../../network/members)
+*Enhancing network defense capabilities through hands-on technical research*
 
-*Built with ❤️ for the cybersecurity research community*
+[![University](https://img.shields.io/badge/Institution-University_of_Wah-blue.svg)](#)
+[![Department](https://img.shields.io/badge/Department-Cybersecurity-purple.svg)](#)
+[![Course](https://img.shields.io/badge/Course-Network_Security-teal.svg)](#)
+[![Semester](https://img.shields.io/badge/Semester-5th-green.svg)](#)
+[![Project](https://img.shields.io/badge/Type-Research_Project-orange.svg)](#)
+
+---
+
+**"Poke around and find out!"**
+
+**⭐ Star this repository if it helped your cybersecurity learning journey!**
 
 </div>
