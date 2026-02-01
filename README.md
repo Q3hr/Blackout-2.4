@@ -348,6 +348,24 @@ If vulnerabilities are discovered during authorized testing:
 
 ---
 
+## 👏 Huge Credit & Acknowledgment
+
+A massive round of applause and sincere appreciation to **[@justcallmekoko](https://github.com/justcallmekoko)** 🎉👏  
+
+This project would **not be possible** without the groundbreaking work, research, and open-source contributions provided by **justcallmekoko**, whose **ESP32 Marauder** project laid the foundation for modern ESP32-based Wi-Fi and BLE security research tools.
+
+Their work has empowered:
+- Security researchers  
+- Students and educators  
+- Red teamers and hobbyists  
+- The broader open-source cybersecurity community  
+
+**Blackout 2.4** builds upon these concepts strictly for **educational and academic purposes**, extending and adapting ideas to demonstrate **2.4 GHz spectrum behavior, wireless attacks, and security weaknesses** in a controlled lab environment.
+
+🙏 Thank you for your dedication to open-source security research and for inspiring countless learners worldwide.
+
+---
+
 <div align="center">
 
 **Blackout 2.4** - *Illuminating Wireless Security Through Controlled Darkness*
