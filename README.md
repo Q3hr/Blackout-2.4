@@ -349,7 +349,7 @@ If vulnerabilities are discovered during authorized testing:
 
 ---
 
-<div>
+<div align="center">
 
 **Blackout 2.4** - *Illuminating Wireless Security Through Controlled Darkness*
 
