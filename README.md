@@ -101,9 +101,18 @@ Exploits BLE advertising mechanisms to overwhelm nearby devices:
 | **Header Pins** | 2.54mm pitch<br/>Male-to-female | Provides modular connections between ESP32 GPIO pins and peripheral devices |
 | **Jumper Wires** | 20cm, male-to-male<br/>Various colors | Creates signal pathways for SPI, power, and control lines between components |
 
-### Circuit Connections
+### 🔌 Circuit Connections
 
+All hardware wiring and pin mapping details are provided in the following document:
 
+📊 **Connection Excel File:**  
+👉 https://github.com/Q3hr/Blackout-2.4/tree/main/Pre-Compiled%20Binaries/Connection%20Excel%20File
+
+This file contains:
+- ESP32 ↔ TFT display pin connections  
+- Power and ground mappings  
+- SPI signal wiring (MOSI, MISO, SCK, CS, DC, RST)  
+- Touch interface connections
 
 ### Power Requirements
 - **Operating Voltage**: 3.3V (regulated on-board)
@@ -126,12 +135,18 @@ Blackout 2.4 uses a simplified firmware flashing approach that requires no sourc
 
 ### Step-by-Step Installation
 
-#### 1️⃣ Download Firmware
+### 🔽 Firmware Download
 
-Navigate to the [Releases](../../releases) section of this repository and download the latest firmware package containing:
+All pre-compiled firmware binaries are available here:
+
+📁 **Firmware Files Directory:**  
+👉 https://github.com/Q3hr/Blackout-2.4/tree/main/Pre-Compiled%20Binaries/Firmware%20Files
+
+Navigate to the **Firmware Files** directory and download the latest firmware package containing:
+- `boot_app0.bin`
 - `bootloader.bin`
 - `partitions.bin`
-- `blackout24.bin`
+- `firmware.bin`
 
 #### 2️⃣ Connect ESP32
 
@@ -156,7 +171,8 @@ This web-based ESP flasher tool uses WebSerial API for direct serial communicati
 |------|--------|-------------|
 | `bootloader.bin` | `0x1000` | ESP32 bootloader |
 | `partitions.bin` | `0x8000` | Partition table |
-| `blackout24.bin` | `0x10000` | Main application |
+| `boot_app0.bin` | `0xE000` | ESP32 bootapp |
+| `firmware.bin` | `0x10000` | Main application |
 
 3. Click **"Program"** to begin the flashing process
 4. Wait for the "Programming successful" message
@@ -306,37 +322,47 @@ If vulnerabilities are discovered during authorized testing:
 
 ## 📚 References
 
-### Academic Papers
+[1] IEEE Standards Association, *“IEEE Standard for Information Technology—Telecommunications and Information Exchange Between Systems—Local and Metropolitan Area Networks—Specific Requirements—Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications,”* IEEE Std 802.11™, 2020.  
+🔗 https://standards.ieee.org/standard/802_11-2020.html
 
-[1] M. Vanhoef and F. Piessens, "Key Reinstallation Attacks: Forcing Nonce Reuse in WPA2," *Proc. ACM SIGSAC Conference on Computer and Communications Security (CCS)*, 2017, pp. 1313-1328.
+[2] Bluetooth SIG, *“Bluetooth Core Specification Version 5.3,”* Bluetooth Special Interest Group, 2021.  
+🔗 https://www.bluetooth.com/specifications/
 
-[2] D. Konings, F. Schaub, F. Kargl, and D. Basin, "802.11w - Impact of Management Frame Protection on Wireless Security," *IEEE International Conference on Communications (ICC)*, 2013, pp. 4167-4172.
+[3] Espressif Systems, *“ESP32 Series Datasheet,”* Espressif Systems Inc., 2023.  
+🔗 https://www.espressif.com/
 
-[3] J. Wright, "Detecting Wireless LAN MAC Address Spoofing," *White Paper, Aruba Networks*, 2003.
+[4] M. Vanhoef and F. Piessens, *“Key Reinstallation Attacks: Forcing Nonce Reuse in WPA2,”* Proceedings of the ACM Conference on Computer and Communications Security (CCS), pp. 1313–1328, 2017.  
+🔗 https://www.krackattacks.com/
 
-[4] R. Das, A. Gadre, S. Zhang, S. Kumar, and J. Moura, "A Deep Learning Approach for Wireless Intrusion Detection," *IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)*, 2018, pp. 452-457.
+[5] J. Wright, *“Detecting and Preventing Wireless Network Attacks,”* SANS Institute Whitepaper, 2018.  
+🔗 https://www.sans.org/white-papers/
 
-### Technical Documentation
+[6] Wireshark Foundation, *“Wireshark User Guide,”* 2023.  
+🔗 https://www.wireshark.org/docs/
 
-[5] Espressif Systems, "ESP32 Technical Reference Manual," Version 4.6, 2023. [Online]. Available: https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf
+[7] OWASP Foundation, *“OWASP Top 10 – Wireless Risks,”* 2022.  
+🔗 https://owasp.org/
 
-[6] IEEE Standards Association, "IEEE 802.11-2020 - IEEE Standard for Information Technology—Telecommunications and Information Exchange between Systems Local and Metropolitan Area Networks," 2021.
+[8] National Institute of Standards and Technology (NIST), *“Guide to Wireless Network Security,”* NIST Special Publication 800-153, 2012.  
+🔗 https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-153.pdf
 
-[7] Bluetooth SIG, "Bluetooth Core Specification Version 5.3," 2021. [Online]. Available: https://www.bluetooth.com/specifications/specs/core-specification-5-3/
+---
 
-### Security Resources
+## 👏 Huge Credit & Acknowledgment
 
-[8] OWASP, "OWASP Mobile Security Testing Guide," 2023. [Online]. Available: https://owasp.org/www-project-mobile-security-testing-guide/
+A massive round of applause and sincere appreciation to **[@justcallmekoko](https://github.com/justcallmekoko)** 🎉👏  
 
-[9] NIST, "Guide to Bluetooth Security," Special Publication 800-121 Revision 2, 2017.
+This project would **not be possible** without the groundbreaking work, research, and open-source contributions provided by **justcallmekoko**, whose **ESP32 Marauder** project laid the foundation for modern ESP32-based Wi-Fi and BLE security research tools.
 
-[10] Wi-Fi Alliance, "Wi-Fi Protected Access 3 (WPA3) Specification," Version 2.0, 2020.
+Their work has empowered:
+- Security researchers  
+- Students and educators  
+- Red teamers and hobbyists  
+- The broader open-source cybersecurity community  
 
-### Tools & Libraries
+**Blackout 2.4** builds upon these concepts strictly for **educational and academic purposes**, extending and adapting ideas to demonstrate **2.4 GHz spectrum behavior, wireless attacks, and security weaknesses** in a controlled lab environment.
 
-[11] SpacehuhnTech, "esp8266_deauther," GitHub Repository, 2023. [Online]. Available: https://github.com/SpacehuhnTech/esp8266_deauther
-
-[12] Adafruit Industries, "Adafruit_ILI9341 Library," GitHub Repository, 2023. [Online]. Available: https://github.com/adafruit/Adafruit_ILI9341
+🙏 Thank you for your dedication to open-source security research and for inspiring countless learners worldwide.
 
 ---
 
