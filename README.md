@@ -188,7 +188,7 @@ This web-based ESP flasher tool uses WebSerial API for direct serial communicati
 #### 5️⃣ Launch Blackout 2.4
 
 1. Disconnect and reconnect the ESP32 to power cycle
-2. The TFT display should show the Blackout 2.4 splash screen
+2. The TFT display should show the Project's splash screen
 3. Use the touchscreen to navigate to your desired attack mode
 
 ### Troubleshooting
